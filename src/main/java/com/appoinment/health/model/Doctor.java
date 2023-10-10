@@ -16,7 +16,7 @@ import java.util.List;
 public class Doctor {
 
     @Id
-    private Long id;
+    private String id;
     List<Appointment> listOfAppointments = new ArrayList<>();
     List<Message> listOfMessage = new ArrayList<>();
     private List<Review> listOfReviews = new ArrayList<>();

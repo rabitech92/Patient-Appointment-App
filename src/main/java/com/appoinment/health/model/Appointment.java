@@ -1,9 +1,11 @@
 package com.appoinment.health.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
@@ -12,9 +14,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "appointment")
 public class Appointment {
     @Id
-    private Long id;
+    private String id;
+    @DBRef
+    @JsonIgnore
     private Patient patient;
+    @DBRef
+    @JsonIgnore
     private Doctor doctor;
+    @DBRef
+    @JsonIgnore
     private Review review;
 
 }
