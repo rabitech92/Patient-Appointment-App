@@ -19,6 +19,8 @@ public class Patient {
     private String id;
     private String name;
     private String mobileNo;
+    private String password;
+
 
     @DBRef
     @JsonIgnore
