@@ -1,16 +1,15 @@
 package com.appoinment.health.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
-@Data
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "patients")
@@ -18,7 +17,8 @@ public class Patient {
     @Id
     private String id;
     private String name;
-    private String mobileNo;
+    private String email;
+    private String type;
     private String password;
 
 

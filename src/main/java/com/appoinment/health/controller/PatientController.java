@@ -1,23 +1,23 @@
 package com.appoinment.health.controller;
 
+import com.appoinment.health.dto.PatientDto;
 import com.appoinment.health.model.Patient;
 import com.appoinment.health.service.PatientService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping
+@RequiredArgsConstructor
 public class PatientController {
 
-    private PatientService patientService;
+    private static PatientService patientService;
 
-    public PatientController(PatientService patientService) {
-        this.patientService = patientService;
-    }
 
     @PostMapping("/patient")
-    public Patient create(@RequestBody Patient patient){
+    public PatientDto create(@RequestBody Patient patient){
         return patientService.createPatient(patient);
     }
 
